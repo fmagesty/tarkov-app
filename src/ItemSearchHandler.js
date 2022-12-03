@@ -4,13 +4,10 @@ import RenderItem from "./RenderItem"
 
 const ItemSearchHandler = () => {
 	const [inputValue, setInputValue] = useState("")
-	const [itemDataToRender, setItemDataToRender] = useState("")
+	const [itemDataRequested, setItemDataRequested] = useState("")
 
-	const handleChange = (event) => {
-		setInputValue(event.target.value)
-	}
-
-	const handleSubmit = async (inputValue) => {
+	const handleSubmit = async (event) => {
+		event.preventDefault()
 		const response = await fetchItems(inputValue)
 		const itemResponseArr = response.data.items
 		if (itemResponseArr.length >= 1) {
@@ -24,25 +21,23 @@ const ItemSearchHandler = () => {
 				)}`
 			)
 		}
-		setItemDataToRender(itemResponseArr)
+		setItemDataRequested(itemResponseArr)
 	}
 
 	return (
 		<>
+		<form onSubmit={handleSubmit}>
 			<input
 				type="text"
-				id="message"
-				name="message"
-				onChange={handleChange}
+				id="item-search-input"
+				name="item-search-input"
+				onChange={event => setInputValue(event.target.value)}
 				value={inputValue}
 				placeholder='item name'
 			/>
-			<div>
-			<button onClick={() => handleSubmit(inputValue)} type="submit">
-				Submit
-			</button>
-			</div>
-			{itemDataToRender && <RenderItem itemArr={itemDataToRender} />}
+			<button type="submit">Submit</button>
+		</form>
+			{itemDataRequested && <RenderItem itemArr={itemDataRequested} />}
 		</>
 	)
 }

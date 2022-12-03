@@ -7,6 +7,7 @@
   "files.autoSave": "onFocusChange", // optional but recommended
   "prettier.semi": false,
   "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  }
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "eslint.codeActionsOnSave.rules": null
 }

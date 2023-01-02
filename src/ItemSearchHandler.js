@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import fetchItems from './services/fetchItems'
 import RenderItem from './RenderItem'
+import RenderCheckboxes from './RenderCheckboxes'
 
 const ItemSearchHandler = () => {
   const [inputValue, setInputValue] = useState('')
@@ -27,6 +28,7 @@ const ItemSearchHandler = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
+        <RenderCheckboxes />
         <input
           type="text"
           id="item-search-input"

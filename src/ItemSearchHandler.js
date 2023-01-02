@@ -11,17 +11,18 @@ const ItemSearchHandler = () => {
     event.preventDefault()
     const response = await fetchItems(inputValue)
     const itemResponseArr = response.data.items
-    if (itemResponseArr.length >= 1) {
-      console.log(
-        `// Success: Item request found! Response: ${JSON.stringify(response)}`
-      )
-    } else {
-      console.log(
-        `// Error: Item request not found. Response: ${JSON.stringify(
-          response
-        )}`
-      )
+    try {
+      if (itemResponseArr.length >= 1) {
+        console.log(
+          `// Success: Item request found! Response: ${JSON.stringify(
+            response
+          )}`
+        )
+      }
+    } catch (error) {
+      console.log(error)
     }
+
     setItemDataRequested(itemResponseArr)
   }
 

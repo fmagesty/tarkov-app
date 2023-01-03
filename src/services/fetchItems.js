@@ -8,7 +8,7 @@ const fetchItems = async (inputValue) => {
     },
     body: JSON.stringify({
       query: `{
-    items(name: "${inputValue}"), {
+    items(name: '${inputValue}'), {
         id
         name
         shortName

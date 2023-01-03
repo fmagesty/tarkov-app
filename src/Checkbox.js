@@ -5,7 +5,7 @@ const Checkbox = (item) => {
   item = item.item
 
   return (
-    <div>
+    <div className="Checkbox">
       <input
         label={item.label}
         type="checkbox"

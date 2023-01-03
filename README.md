@@ -12,3 +12,9 @@ ___
 
 ### Current state screenshot:
 ![](src/assets/readme-screenshots/app-example-1.png)
+
+
+
+------
+## SOME-KIND-OF-DEVLOG-IDK (README IS A MESS BUT ¯/\_(ツ)_/¯):
+Jan 3rd 2023: Currently doing some css for the app. added a toggle content button to display some information about the app itself and the cool API it's fetchting from. Still deciding on a color pattern for the app. Want to use something cheerfu, instead of Tarkov's depressing color pallete xD

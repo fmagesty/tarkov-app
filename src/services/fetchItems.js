@@ -1,5 +1,5 @@
 const fetchItems = async (inputValue) => {
-  const url = 'https://api.tarkov.dev/graphql'
+  const url = `https://api.tarkov.dev/graphql` // todo: add query params for other reqs
   const payload = {
     method: 'POST',
     headers: {
@@ -8,7 +8,7 @@ const fetchItems = async (inputValue) => {
     },
     body: JSON.stringify({
       query: `{
-    items(name: '${inputValue}'), {
+    items(name: "${inputValue}"), {
         id
         name
         shortName
